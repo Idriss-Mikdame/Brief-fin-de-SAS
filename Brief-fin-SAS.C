@@ -66,7 +66,23 @@ void modifierTache(){
         printf("Taper la priorite de la tache : ");
         scanf("%s",taches[nbrM].priorite);
         printf("La modification est succes\n");}}
-
+// Fonction pour supprimer une tâche
+void supprimerTache(){
+    if(n < 1){ // Vérifie s'il y a des tâches à supprimer
+        printf("Exist aucun tache pour suprimer\n");
+        printf("Merci de cree des taches dans option 1 \n");}
+       else {
+    int nbrS;
+    printf("Entre le Nbr de  la tache ete suprimer : ");
+    scanf("%d",&nbrS);
+    if (nbrS < 1 || nbrS > n )// Vérifie si le numéro de tâche est valide
+    { printf("Le Nbr de la tache invalide !!!");}
+    nbrS--;// Convertit en index du tableau
+    for (int i = nbrS; i < n - 1;i++){
+            taches[i] = taches[ i + 1];
+             }
+            n--;// Réduit le nombre de tâches
+}}
 
 // Fonction principale pour afficher le menu et exécuter les options
 int main(){
