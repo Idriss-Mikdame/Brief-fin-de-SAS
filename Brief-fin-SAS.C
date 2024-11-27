@@ -42,6 +42,31 @@ for(int i=0;i < n;i++){// Affichage des informations de chaque tâche
         printf("La date d'echeance la tache -> %s\n",taches[i].date_echeance);
         printf("La priorite de la tache     -> %s\n",taches[i].priorite);
     }}}
+// Fonction pour modifier une tâche existante
+void modifierTache(){
+     if(n < 1){// Vérifie s'il y a des tâches à modifier
+        printf("Exist aucun tache pour Modifier\n");
+        printf("Merci de cree des taches dans option 1 \n");}
+       else {
+    int nbrM;
+    printf("Choisire le NBR de tache pour modifier :");
+    scanf("%d",&nbrM);
+       if(nbrM < 1 || nbrM > n){// Vérifie si le numéro de tâche est valide
+        printf("le nbr de tache invalide !!!");
+       }
+       nbrM--;// Convertit en index du tableau
+       // Saisie des nouvelles informations pour la tâche
+        printf("Ajouter pour modifier la tache N : %d\n",nbrM+1);
+        printf("Taper la tache : ");
+        scanf(" %[^\n]",taches[nbrM].titre);
+        printf("Taper la description de la tache : ");
+        scanf(" %[^\n]",taches[nbrM].description);
+        printf("Taper la date d'échéance dd/mm/aa : ");
+        scanf("%s",taches[nbrM].date_echeance);
+        printf("Taper la priorite de la tache : ");
+        scanf("%s",taches[nbrM].priorite);
+        printf("La modification est succes\n");}}
+
 
 // Fonction principale pour afficher le menu et exécuter les options
 int main(){
