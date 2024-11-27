@@ -83,7 +83,33 @@ void supprimerTache(){
              }
             n--;// Réduit le nombre de tâches
 }}
+// Fonction pour filtrer les tâches par priorité
+void filtrer_tache(){
+    char priorite[10];
+        if(n < 1){// Vérifie s'il y a des tâches à filtrer
+            printf("Exist aucun tache pour filtrer\n ");
+            printf("Merci de cree des taches dans option 1 \n");}
+        else {
+            printf("Entrez la priorite à filtrer (High/Low) : ");
+            scanf("%s",&priorite);
 
+    int touver = 0;// Indique si une tâche correspond à la priorité donnée
+    for(int i=0;i < n;i++){
+        if(strcmp(taches[i].priorite,priorite) == 0)
+        {
+        touver = 1;
+        printf("\nl'affichage des informations des taches N-%d\n",i+1);
+        printf("Titre de la tache           -> %s\n",taches[i].titre);
+        printf("La description  de la tache -> %s\n",taches[i].description);
+        printf("La date d'echeance la tache -> %s\n",taches[i].date_echeance);
+        printf("La priorite de la tache     -> %s\n",taches[i].priorite);
+        printf("La filtration est succes\n");
+
+        }
+    }
+    if (touver != 1)
+        printf("aucun priorite trouve dans les taches pour %s\n", priorite);
+}}
 // Fonction principale pour afficher le menu et exécuter les options
 int main(){
     int choix;
