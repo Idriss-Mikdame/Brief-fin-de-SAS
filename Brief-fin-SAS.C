@@ -29,6 +29,19 @@ Tache taches[100]; // Tableau pour stocker jusqu'à 100 tâches
 
 }
 // Fonction pour afficher toutes les tâches
+void afficherTaches(){
+    if(n < 1){// Vérifie s'il y a des tâches à afficher
+        printf("Exist aucun tache a afficher \n");
+        printf("Merci de cree des taches dans option 1 \n");
+        }
+       else {
+for(int i=0;i < n;i++){// Affichage des informations de chaque tâche
+        printf("l'affichage des informations des taches N-%d\n",i+1);
+        printf("Titre de la tache           -> %s\n",taches[i].titre);
+        printf("La description  de la tache -> %s\n",taches[i].description);
+        printf("La date d'echeance la tache -> %s\n",taches[i].date_echeance);
+        printf("La priorite de la tache     -> %s\n",taches[i].priorite);
+    }}}
 
 // Fonction principale pour afficher le menu et exécuter les options
 int main(){
